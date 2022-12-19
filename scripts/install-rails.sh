@@ -39,3 +39,6 @@ $safelyrun rails db:migrate
 explain "Generating micropost resource"
 $safelyrun rails generate scaffold Micropost content:text user_id:integer
 $safelyrun rails db:migrate
+
+explain "Adding a static page controller"
+$safelyrun rails generate controller StaticPages home help
