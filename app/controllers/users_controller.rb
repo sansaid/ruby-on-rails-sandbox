@@ -16,6 +16,11 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
+  # Because this is empty, this will always default to the function defined in the `before_action`.
+  # 
+  # The view presented for this controller is in `apps/views/users/edit.html.erb`, and will be rendered by
+  # default after the controller action is executed. The updated version of the `@users` object will be used
+  # in the view.
   def edit
   end
 
