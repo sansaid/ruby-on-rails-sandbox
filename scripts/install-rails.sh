@@ -32,6 +32,10 @@ $safelyrun bundle config set --local without 'production'
 $safelyrun bundle install
 $safelyrun bundle lock --add-platform x86_64-linux
 
-explain "Generating app resources"
+explain "Generating user resource"
 $safelyrun rails generate scaffold User name:string email:string
+$safelyrun rails db:migrate
+
+explain "Generating micropost resource"
+$safelyrun rails generate scaffold Micropost content:text user_id:integer
 $safelyrun rails db:migrate
